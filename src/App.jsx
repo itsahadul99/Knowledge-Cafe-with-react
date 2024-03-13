@@ -7,10 +7,10 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className="md:flex">
-      <Blogs></Blogs>
-      <BookMarks></BookMarks>
-      </div>
+      <main className="flex justify-between items-start container mx-auto gap-5">
+        <Blogs></Blogs>
+        <BookMarks></BookMarks>
+      </main>
     </>
   )
 }
