@@ -1,8 +1,8 @@
 import { CiBookmark } from "react-icons/ci";
-import PropTypes from 'prop-types';
-const Blog = ({blog}) => {
-    const {cover, title, author_img, author,posted_date,reading_time,hashtags} = blog;
-    console.log(blog);
+import PropTypes, { func } from 'prop-types';
+const Blog = ({blog, handleBookmarks}) => {
+    const {cover, title, author_img, author,posted_date,reading_time,hashtags, id} = blog;
+    // console.log(blog);
     return (
         <div className='container mx-auto space-y-4 my-5'>
             <img className='w-full' src={cover} alt={title} />
@@ -16,7 +16,7 @@ const Blog = ({blog}) => {
                 </div>
                 <div className="flex items-center">
                     <span className='text-[#0B0B0B99]'>{reading_time} min read time </span>
-                    <button className="ml-2"><CiBookmark /></button>
+                    <button onClick={() => handleBookmarks(id,blog)} className="ml-2"><CiBookmark /></button>
                 </div>
             </div>
             <h1 className='text-4xl font-bold'>{title}</h1>
@@ -28,10 +28,12 @@ const Blog = ({blog}) => {
                 >#{item}</p>)
             }
             </div>
+            <button className="text-xl text-[#6047EC] underline font-bold">Mark as read</button>
         </div>
     );
 };
 Blog.propTypes = {
     blog: PropTypes.object.isRequired,
+    handleBookmarks:func.isRequired
 }
 export default Blog;
