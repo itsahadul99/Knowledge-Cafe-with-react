@@ -28,7 +28,7 @@ const Blog = ({ blog, handleBookmarks, handlerMarkAsReading }) => {
                     >#{item}</p>)
                 }
             </div>
-            <button onClick={() => handlerMarkAsReading(blog.reading_time)} className="text-xl text-[#6047EC] underline font-bold">Mark as read</button>
+            <button onClick={() => handlerMarkAsReading(id,blog.reading_time)} className="text-xl text-[#6047EC] underline font-bold">Mark as read</button>
         </div>
     );
 };

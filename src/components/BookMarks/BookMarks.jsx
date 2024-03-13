@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 const BookMarks = ({bookmarks, readingmark}) => {
-    console.log(bookmarks);
-    // const {title} = bookmarks;
+    
     return (
         <div className="w-1/3 my-5">
             <h1 className="p-5 border border-[#6047EC] rounded-lg mb-5 text-[#6047EC] font-bold bg-[#3C2FEC1A]">Spent time on read : {readingmark} min</h1>

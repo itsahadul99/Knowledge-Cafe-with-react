@@ -15,9 +15,14 @@ function App() {
   }
 
   // mark as reading handler
-  const handlerMarkAsReading = (time) =>{
-    // console.log("reading mark as added soon");
+  const handlerMarkAsReading = (id,time) =>{
+
     setReadingmark(readingmark + time);
+
+    // remove the bookmark when click mark as read
+    
+    const remainingBookmark = bookmarks.filter(bookmark => bookmark.id !== id);
+    setBookmarks(remainingBookmark)
   }
   return (
     <>
